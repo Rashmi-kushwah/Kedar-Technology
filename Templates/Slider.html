@@ -1,0 +1,98 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+
+.carousel-item video {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            bottom: 20%;
+        }
+        .payment-button {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .Slider-container video{
+            height: 600px;
+        }   
+        .video h5{
+            /* font-family: 'Montserrat', sans-serif; */
+            font-family: 'Pacifico', cursive;
+            font-size: 60px;
+            color: #fff;
+            font-weight: 700;
+        }
+        @media (max-width: 768px) {
+        .Slider-container video{
+            height: 300px;
+        }
+    }
+</style>
+
+      
+<!-- -------------- -->
+{% load static %}
+<div id="videoCarousel" class="carousel slide" data-ride="carousel" data-interval="5000"> <!-- Set data-interval to 5000 milliseconds (5 seconds) -->
+    <div class="Slider-container">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <video autoplay loop muted>
+                <!-- <source src="c:\Users\rashm\Downloads\5614724-hd_720_1280_30fps.mp4" type="video/mp4"> -->
+               
+                    <source src="{% static '3320517-uhd_2160_3840_25fps.mp4' %}" type="video/mp4">
+                   
+                </video>
+                
+
+            <div class="video">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 >For our upcoming business partner & clients.</h5>
+                <p >At SV Algo Web Code, we go beyond code – we understand <br> your unique challenges and goals to craft bespoke web and mobile applications that propel…</p>
+                <a href="/Contact-Us/" class="btn btn-primary" style="background-color: #76D7C4; color: black; margin-top: 20px;">Get More info</a>
+            </div>
+        </div>
+    </div>
+        <div class="carousel-item">
+            <video autoplay loop muted>
+                
+                <source src="{% static '5614724-hd_720_1280_30fps.mp4'%}" type="video/mp4">
+               
+              
+            </video>
+            <div class="video">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 >Best IT Solution & Company In Global Community.</h5>
+                <p >Discover a world of limitless opportunities as we harness the latest technologies and our passion for excellence to deliver transformative software solutions. Join us on…</p>
+                <a href="/Contact-Us/" class="btn btn-primary" style="background-color: #76D7C4; color: black; margin-top: 20px;">Get More info</a>
+            </div>
+            </div>
+        </div>
+        <!-- Add more carousel items as needed -->
+    </div>
+</div>
+    <a class="carousel-control-prev" href="#videoCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#videoCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only" >Next</span>
+    </a>
+</div>
+<!--  -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
