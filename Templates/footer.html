@@ -46,7 +46,7 @@ footer i {
         }
         footer .fas {
     margin-right: 8px;
-    color: #fff; /* White color for icons */
+    color: #fff;
 }
 
 footer p {
@@ -69,26 +69,27 @@ footer i {
 }
 /*  */
 .list-unstyled li {
-        list-style-type: none; /* Remove default list style */
-        margin-bottom: 5px; /* Adjust margin as needed */
+        list-style-type: none; 
+        margin-bottom: 5px;
     }
 
     .list-unstyled li a {
-        display: flex; /* Use flexbox for alignment */
-        align-items: center; /* Center align items vertically */
+        display: flex; 
+        align-items: center; 
         color: #fff;
         /* text-decoration: none; */
         
     }
 
     .list-unstyled li a i {
-        margin-right: 8px; /* Adjust icon margin */
-        color: #fff; /* Ensure icons are white */
+        margin-right: 8px; 
+        color: #fff; 
     }
 
     .list-unstyled li a:hover {
         color: #ccc;
     }
+
     /*  */
    
 @media (max-width: 576px) {
@@ -129,14 +130,16 @@ footer i {
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                   
-                    <a class="navbar-brand" href="#">
-                        <img src="https://www.svalgo.com/img/logo.png" alt="Logo"> SV ALGO
-                    </a>
+                    <a class="navbar-brand" href="{% url 'homepage' %}">           
+        <img src="https://seupload.com/cache/plugins/filepreviewer/128600/6104f5f4cd162b5f3049013a111afcbe0efd8d756caaefd9c46a8476066e10c5/1100x800_cropped.jpg" style=" width: 160px;
+        height: 60px;
+        object-fit: contain; border: none;"  alt="Logo"> 
+        </a>
                     <p>Information Technology</p>
                     <p>We pride ourselves on being the go-to destination for all your digital needs...</p>
                     <div class="social-icons">
-                        <a href="#" class="text-white" style="font-size: 2.4rem;"><i class="fab fa-whatsapp"></i></a>
+                        
+                        <a href="https://wa.me/8193036931?text=Hi" target="_blank" class="text-white" style="font-size: 2.4rem;"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" class="text-white ml-1" style="font-size: 2.4rem;"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-white ml-1" style="font-size: 2.4rem;"><i class="fab fa-telegram"></i></a>
                     </div>
@@ -145,7 +148,7 @@ footer i {
                     <h6 style="font-size: 25px;">Support</h6>
                     <ul class="list-unstyled">
                         <li><a href="#"><i class="fas fa-angle-right"></i> Home</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> About Us</a></li>
+                        <li><a href="/About-Us/"><i class="fas fa-angle-right"></i> About Us</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Disclaimer</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Privacy Policy</a></li>
                         <li><a href="#"><i class="fas fa-angle-right"></i> Terms And Condition</a></li>
@@ -156,18 +159,14 @@ footer i {
                 <div class="col-md-2">
                     <h6 style="font-size: 25px;">Services</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Website Design</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Web Application</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Mobile Application</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Search Engine Optimisation</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Social Media Marketing</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Ecommerce Website</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> WordPress Website</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Website Maintenance</a></li>
-                        <li><a href="#"><i class="fas fa-angle-right"></i> Custom Software</a></li>
+                        {% for services in Service %}
+                        <li><a href="{% url 'read_more' services.id %}"><i class="fas fa-angle-right"></i>{{ services.title }}</a></li>
+                       
+                        {% endfor %}
+
                     </ul>
                 </div>
+                
                 <div class="col-md-4">
                     <h6 style="font-size: 25px;">Contact</h6>
                     <p><i class="fas fa-map-marker-alt"></i> Madhya Pradesh, Dewas (455001)</p>

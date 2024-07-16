@@ -19,10 +19,12 @@ from django.urls import path
 from django.conf.urls.static import static
 from . import views
 
+from django.urls import path , include
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Subadmin_panel/', include('Subadmin.urls')),
     path('', views.homepage, name='homepage'),
     path('header/', views.header, name='header'),
     path('Contact-Us/', views.ContactUs, name='ContactUs'),
