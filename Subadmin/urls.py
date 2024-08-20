@@ -31,8 +31,8 @@ urlpatterns = [
    path('admin/', admin.site.urls),
     path('', views.Sub_adminlogin, name=''),
     path('dashboard/', views.Dashboard, name='dashboard'), 
-    path('add_services/', views.add_service, name='add_service'), 
-    path('all_Services/',views.service_list,name= 'service_list'),
-    path('Edit_service/', views.edit_service, name='edit_service'),
+    path('add_services/', views.add_services, name='add_service'), 
+    path('all_Services/',views.services_list,name= 'service_list'),
+    path('Edit_service/', views.edit_services, name='edit_service'),
     
 ]

@@ -57,7 +57,7 @@ def Dashboard(request):
 ################################# ADD SERVICES ###################################
 
 @csrf_exempt
-def add_service(request):
+def add_services(request):
     try:
           
         admin_id = request.session.get('user_id')
@@ -73,14 +73,14 @@ def add_service(request):
         else:
             form = ServiceForm()
 
-        return render(request, 'Subadmin_Addcards', {'ServiceForm': form})
+        return render(request, 'Subadmin_Addcards.html', {'ServiceForm': form})
     
 
     except Subadmin_user.DoesNotExist:
         return redirect('/Subadmin_panel/?message=Please login')
 
 ################################# ALL SERVICES ###################################
-def service_list(request):
+def services_list(request):
     try:
           
         admin_id = request.session.get('user_id')
@@ -95,7 +95,7 @@ def service_list(request):
 
 ################################ EDIT FUNCTION ####################################
 
-def edit_service(request):
+def edit_services(request):
     try:
         admin_id = request.session.get('user_id')
         admin = Subadmin_user.objects.get(user_id=admin_id)

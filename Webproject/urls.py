@@ -25,17 +25,16 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Subadmin_panel/', include('Subadmin.urls')),
-    path('', views.homepage, name='homepage'),
-    path('header/', views.header, name='header'),
-    path('Contact-Us/', views.ContactUs, name='ContactUs'),
-    path('About-Us/', views.AboutUs, name='AboutUs'),
-    path('Readmore/<int:service_id>/', views.read_more, name='read_more'),
+    path('', views.Homepage_view, name='homepage'),
+    path('header/', views.Header_view, name='header'),
+    path('Contact-Us/', views.contactUs_view, name='ContactUs'),
+    path('About-Us/', views.aboutUs_view, name='AboutUs'),
+    path('Readmore/<int:service_id>/', views.Read_more_view, name='read_more'),
     path('send-otp/', views.send_otp_view, name='send_otp'),
-    path('service/', views.Service, name='Service'),
+    path('service/', views.services_view, name='Service'),
     
   
 
     
-]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

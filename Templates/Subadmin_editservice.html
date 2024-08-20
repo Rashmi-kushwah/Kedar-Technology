@@ -87,7 +87,14 @@
                         <img src="{{ service.img1.url }}" class="banner-image" alt="Banner Image 1">
                         <input type="file" name="img1" class="form-control">
                     </div>
+                    {% else %}
+                    <div>
+                        <img src="" class="banner-image" alt="Banner Image 1">
+                        <input type="file" name="img1" class="form-control">
+                    </div>
                     {% endif %}
+                   
+                    
                 </div>
                 <div class="form-group half-width">
                     <label for="img2">Image 2:</label>

@@ -13,7 +13,7 @@ from django.shortcuts import render, get_object_or_404
 
 
 
-def homepage(request):
+def Homepage_view(request):
     
     Service = service.objects.all()
     data={
@@ -23,11 +23,11 @@ def homepage(request):
     return render (request,'homepage.html',data)
 
 
-def Service(request):
+def services_view(request):
      
     return render (request,'header.html')
 
-def AboutUs(request):
+def aboutUs_view(request):
     Service = service.objects.all()
     context = {
         'Service':Service,
@@ -35,7 +35,7 @@ def AboutUs(request):
     return render (request,'About us.html',context)
 
 
-def read_more(request, service_id):
+def Read_more_view(request, service_id):
     Service = service.objects.all()
     service_instance = get_object_or_404(service, pk=service_id)
     context = {
@@ -46,7 +46,7 @@ def read_more(request, service_id):
 
 
     
-def header(request):
+def Header_view(request):
     return render (request,'header.html')
 
 
@@ -65,7 +65,7 @@ from django.contrib import messages
 from django.shortcuts import render
 
 
-def ContactUs(request):
+def contactUs_view(request):
     Service = service.objects.all()
     if request.method == 'POST':
         name = request.POST.get('name')
