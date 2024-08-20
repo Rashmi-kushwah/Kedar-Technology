@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <style>
+
       .navbar-nav .nav-link {
             font-size: 17px;
             /* color: white !important; */
@@ -20,11 +21,21 @@
               font-weight: 400;
               
         }
-      
         .dropdown-menu {
+        background-color: rgb(36, 35, 35);
+        width: 300px;
+        margin-left: 50px; 
+        position: absolute;
+        right: 50px;
+        top: 100%;
+        z-index: 1000;
+    }
+
+        /* .dropdown-menu {
             background-color: rgb(36, 35, 35);
             width: 300px;
-        }
+          
+        } */
         .dropdown-item {
             color: white;
         }
@@ -32,7 +43,7 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         .navbar-nav {
-            margin-left:60%;
+            margin-left:58%;
         
         }
        
@@ -100,7 +111,13 @@
 }
 
 /* Hide the text on mobile screens */
-@media (max-width: 768px) {
+
+    @media (max-width: 768px) {
+        .dropdown-menu {
+        width: 80px; /* Adjust the width for smaller screens */
+        left: 50%; /* Position it relative to the screen */
+        transform: translateX(-50%);
+        }
     .navbar-brand .brand-text {
         display: none;
     }
@@ -110,6 +127,7 @@
 
     } */
 }
+
 /* Default size for larger screens */   
  .navbar-brand .brand-logo {
     width: 60px;
@@ -134,17 +152,7 @@
             <img src="https://seupload.com/cache/plugins/filepreviewer/130425/15f3add6def65a603f9bdf6267e0f1813dbf4475bf169d5eccd523518be040bc/1100x800_cropped.jpg" class="brand-logo" alt="joytilingtechnology Logo">
             <span class="brand-text">joytilingtechnology</span>
         </a>
-        
-        <!-- <a class="navbar-brand-custom" href="{% url 'homepage' %}" style="font-size: 24px; font-weight: bold; text-decoration: none;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">
-            joytilingtechnology
-        </a> 
-        <a class="navbar-brand-custom" href="{% url 'homepage' %}" style="text-decoration: none; ">
-            <span class="line1">joytiling </span>
-            <span class="line2">technology</span>
-        </a>-->
       
-        
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
     </button>
