@@ -11,7 +11,9 @@ from .forms import ServiceForm
 
 
 ########################################### LOGIN METHOD  START ##########################
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt
 def Sub_adminlogin(request):
     if 'user_id' in request.session:
             return redirect('/Subadmin_panel/dashboard/')
